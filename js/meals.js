@@ -31,7 +31,8 @@ const displayMeals = meals => {
 }
 
 const searchMeals = () => {
-    console.log('btn-search');
+    const searchText = document.getElementById('search-field').value
+    console.log(searchText);
 }
 
 loadMeals()
