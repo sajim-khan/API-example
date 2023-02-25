@@ -5,7 +5,7 @@ const loadMeals = () => {
 }
 
 const displayMeals = meals => {
-    //console.log(meals);
+    console.log(meals);
     // step -1: Container element
     const mealsContainer = document.getElementById('meals-container')
     meals.forEach(meals => {
@@ -15,20 +15,24 @@ const displayMeals = meals => {
         mealDiv.classList.add('col')
         // step-3 : set content of the child
         
-        mealDiv.innerHTML = `
-        <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
+        mealDiv.innerHTML = `    
+        <div class="card h-100">
+          <img src="${meals.strMealThumb
+          }" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">${meals.strMeal}</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
-      </div>
         `
-    })
-    
-    mealsContainer.appendChild(mealDiv)
-    
+        // Step -4 : appendChild
+        mealsContainer.appendChild(mealDiv)
+    })    
 }
+
+const searchMeals = () => {
+    console.log('btn-search');
+}
+
 loadMeals()
+
