@@ -5,12 +5,9 @@ const loadUser = () => {
 }
 
 const displayUser = user => {
-    // const name = document.getElementById('name')
-    // name.innerHTML = user.results[0].name.first + ' ' + user.results[0].name.last
-    document.getElementById('name').innerHTML = user.results[0].name.first + ' ' + user.results[0].name.last
-    
-    const gender = document.getElementById('gender')
-    gender.innerHTML = user.results[0].gender
+    document.getElementById('name').innerHTML = user.results[0].name.first + ' ' + user.results[0].name.last    
+    // const gender = document.getElementById('gender')
+    // gender.innerHTML = user.results[0].gender
+    document.getElementById('gender').innerHTML = user.results[0].gender
 }
-
 loadUser()
