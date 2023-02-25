@@ -1,5 +1,7 @@
-const loadMeals = () => {
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=fish')
+const loadMeals = (searchText) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
+    console.log(url);
+    fetch(url)
     .then(res => res.json())
     .then(data => displayMeals(data.meals))
 }
@@ -8,6 +10,7 @@ const displayMeals = meals => {
     console.log(meals);
     // step -1: Container element
     const mealsContainer = document.getElementById('meals-container')
+    mealsContainer.innerHTML = '';
     meals.forEach(meals => {
         console.log(meals);
         //step -2 : create child for each element
@@ -33,7 +36,8 @@ const displayMeals = meals => {
 const searchMeals = () => {
     const searchText = document.getElementById('search-field').value
     console.log(searchText);
+    loadMeals(searchText)
 }
 
-loadMeals()
+loadMeals('ri')
 
