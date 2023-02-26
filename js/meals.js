@@ -42,15 +42,15 @@ const searchMeals = () => {
     loadMeals(searchText)
 }
 
-const loadMealDetails = (idMeal) => {
-const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
-  fetch(url)
-  .then(response => response.json())
-  .then(data => displayMealDetails(data.meals[0]))
-  .catch(error => {
-      console.log(error);
-  })
-}
+// const loadMealDetails = (idMeal) => {
+// const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
+//   fetch(url)
+//   .then(response => response.json())
+//   .then(data => displayMealDetails(data.meals[0]))
+//   .catch(error => {
+//       console.log(error);
+//   })
+// }
 
 // Async await
 const loadMealDetail = async(idMeal) => {
@@ -64,7 +64,7 @@ const loadMealDetail = async(idMeal) => {
     console.log(error);
   }
 }
-
+  
 const displayMealDetails = meal => {
   document.getElementById('exampleModalLabel').innerText = meal.strMeal
   document.getElementById('mealDetailsBody').innerHTML = `
@@ -74,6 +74,3 @@ const displayMealDetails = meal => {
 
 loadMeals('rice')
 
-//const res = await fetch(url);
-//const data = await res.json();
-//displayMealDetails(data.meals[0]);
